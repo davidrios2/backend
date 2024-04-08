@@ -3,6 +3,7 @@ package com.udea.reservas.backend.controller;
 import com.udea.reservas.backend.exception.UserNotFoundException;
 import com.udea.reservas.backend.model.User;
 import com.udea.reservas.backend.respository.UserRepository;
+import com.udea.reservas.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,8 +13,14 @@ import java.util.Optional;
 @RestController
 public class UserController {
 
+    private final UserService userService;
+    private final UserRepository userRepository;
+
     @Autowired
-    private UserRepository userRepository;
+    public UserController(UserService userService, UserRepository userRepository) {
+        this.userService = userService;
+        this.userRepository = userRepository;
+    }
 
     @PostMapping("/user")
     User newUser(@RequestBody User newUser) {
@@ -29,6 +36,11 @@ public class UserController {
     User one(@PathVariable Long id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
+    }
+
+    @GetMapping("/user/cedula/{cedula}")
+    public User getUserByCedula(@PathVariable String cedula) {
+        return userService.getUserByCedula(cedula);
     }
 
     @PutMapping("/user/{id}")
