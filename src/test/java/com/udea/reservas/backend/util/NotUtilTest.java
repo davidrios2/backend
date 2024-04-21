@@ -15,7 +15,6 @@ public class NotUtilTest {
 
     @Test
     public void testIsPalindrome() {
-
         boolean result = notUtil.isPalindrome("");
         assertEquals(true, result, "'blank' is a palindrome");
     }
