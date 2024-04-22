@@ -1,7 +1,7 @@
-package com.udea.reservas.backend.service;
+package reservas.service;
 
-import com.udea.reservas.backend.model.User;
-import com.udea.reservas.backend.respository.UserRepository;
+import reservas.model.User;
+import reservas.respository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

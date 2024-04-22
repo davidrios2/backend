@@ -1,4 +1,4 @@
-package com.udea.reservas.backend.exception;
+package reservas.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,4 +1,4 @@
-package com.udea.reservas.backend.util;
+package reservas.util;
 
 public class NotUtil {
 

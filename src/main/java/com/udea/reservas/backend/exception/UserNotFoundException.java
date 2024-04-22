@@ -1,4 +1,4 @@
-package com.udea.reservas.backend.exception;
+package reservas.exception;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(Long id) {

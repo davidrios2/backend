@@ -1,4 +1,4 @@
-package com.udea.reservas.backend.model;
+package reservas.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
