@@ -1,6 +1,6 @@
-package reservas.respository;
+package com.udea.reservas.backend.respository;
 
-import reservas.model.User;
+import com.udea.reservas.backend.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
