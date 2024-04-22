@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class UserControllerTest {
+class UserControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -38,20 +38,20 @@ public class UserControllerTest {
     public void setup() {
         user = new User();
         user.setId(1L);
-        user.setName("Test");
-        user.setLastName("User");
-        user.setEmail("test.user@example.com");
+        user.setName("Juanito");
+        user.setLastName("Perez");
+        user.setEmail("test@email.com");
         user.setPhoneNumber("1234567890");
         user.setCedula("123456789");
     }
 
     @Test
-    public void getUserByCedulaTest() throws Exception {
+    void getUserByCedulaTest() throws Exception {
         when(userService.getUserByCedula("123456789")).thenReturn(user);
 
         mockMvc.perform(get("/user/cedula/123456789")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"id\":1,\"name\":\"Test\",\"lastName\":\"User\",\"email\":\"test.user@example.com\",\"phoneNumber\":\"1234567890\",\"cedula\":\"123456789\"}"));
+                .andExpect(content().json("{\"id\":1,\"name\":\"Juanito\",\"lastName\":\"Perez\",\"email\":\"test@email.com\",\"phoneNumber\":\"1234567890\",\"cedula\":\"123456789\"}"));
     }
 }
