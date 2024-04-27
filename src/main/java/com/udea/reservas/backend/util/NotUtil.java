@@ -7,7 +7,7 @@ public class NotUtil {
     }
 
     public boolean isPalindrome(String inputString) {
-        if (inputString.length() == 0) {
+        if (inputString.isEmpty()) {
             return true;
         } else {
             char firstChar = inputString.charAt(0);
